@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background: #000;
+    }
+
+    .container {
+      margin-top: 50px;
+      text-align: center;
+      background-color: #000;
+      filter: contrast(30);
+    }
+
+    .text {
+      font-size: 100px;
+      color: #fff;
+      letter-spacing: -45px;
+      animation: showup 2s linear forwards;
+    }
+
+    @keyframes showup {
+      0% {
+        filter: blur(7px);
+      }
+
+      100% {
+        letter-spacing: 10px;
+        filter: blur(1px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <span class="text">Xixi Education</span>
+  </div>
+</body>
+
+</html>

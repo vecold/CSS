@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding-top: 100vh;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background-color: #F44336;
+      transform-origin: 0 50%;
+      animation: grow-progress 1s linear;
+      animation-timeline: scroll();
+    }
+
+    main {
+      padding: 10px;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      margin: 10px;
+      background-color: beige;
+      color: coral;
+      font-size: 60px;
+      animation: appear 1s linear both;
+      /* animation-timeline: view(25% -100px); */
+      /* 等于 */
+      /* view-timeline: --subjectReveal block;
+      animation-timeline: --subjectReveal;
+      view-timeline-inset: 50% -100px; */
+      animation: animate-in-and-out 1s linear forwards;
+      animation-timeline: view(10% 10px);
+      
+    }
+
+    @keyframes animate-in-and-out {
+      entry 0% {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      entry 100% {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      exit 100% {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      exit 0% {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+
+    div:nth-child(odd) {
+      background-color: wheat
+    }
+
+    @keyframes grow-progress {
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+
+
+    main {
+      display: flex;
+      overflow-x: scroll;
+      scroll-timeline: --scrollcontainer inline;
+      position: relative;
+    }
+
+    main>span {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background-color: blue;
+      transform-origin: 0 50%;
+      animation: auto grow-progress2 linear forwards;
+      animation-timeline: --scrollcontainer;
+    }
+
+    main {
+      padding: 10px;
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 280px;
+      flex-shrink: 0;
+      margin: 10px;
+      background-color: beige;
+      color: coral;
+      font-size: 80px;
+    }
+
+    p:nth-child(odd) {
+      background-color: wheat
+    }
+
+    @keyframes grow-progress2 {
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    .back {
+      z-index: 2;
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      background-color: black;
+      border-radius: 4px;
+      width: 40px;
+      height: 40px;
+      animation: back-progress 1s linear forwards;
+      animation-timeline: scroll();
+      animation-range: 0 100px;
+    }
+
+    @keyframes back-progress {
+      from {
+        transform: translateY(150%);
+      }
+
+      to {
+        transform: translateY(0%);
+      }
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      background-color: royalblue;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      font-size: 100px;
+      color: #fff;
+      animation: header 1s linear forwards;
+      animation-timeline: scroll();
+      animation-range: 0 calc(100vh - 60px);
+      z-index: 1;
+    }
+
+    @keyframes header {
+      to {
+        height: 60px;
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>😀</header>
+  <main>
+    <p>欢</p>
+    <p>迎</p>
+    <p>关</p>
+    <p>注</p>
+    <p>前</p>
+    <p>端</p>
+    <p>侦</p>
+    <p>探</p>
+    <span></span>
+  </main>
+  <div>欢</div>
+  <div>迎</div>
+  <div>关</div>
+  <div>注</div>
+  <div>小</div>
+  <div>埋</div>
+  <div>公</div>
+  <div>子</div>
+  <div>欢</div>
+  <div>迎</div>
+  <div>关</div>
+  <div>注</div>
+  <div>小</div>
+  <div>埋</div>
+  <div>公</div>
+  <div>子</div>
+  <div>欢</div>
+  <div>迎</div>
+  <div>关</div>
+  <div>注</div>
+  <div>小</div>
+  <div>埋</div>
+  <div>公</div>
+  <div>子</div>
+  <div>欢</div>
+  <div>迎</div>
+  <div>关</div>
+  <div>注</div>
+  <div>小</div>
+  <div>埋</div>
+  <div>公</div>
+  <div>子</div>
+  <div>欢</div>
+  <div>迎</div>
+  <div>关</div>
+  <div>注</div>
+  <div>小</div>
+  <div>埋</div>
+  <div>公</div>
+  <div>子</div>
+  <div>欢</div>
+  <div>迎</div>
+  <div>关</div>
+  <div>注</div>
+  <div>小</div>
+  <div>埋</div>
+  <div>公</div>
+  <div>子</div>
+  <a class="back" href="#"></a>
+</body>
+
+</html>
